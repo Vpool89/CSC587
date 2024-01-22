@@ -1,0 +1,78 @@
+---
+title: "HW 1"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+Question 1
+```{r}
+
+su <- read.delim("C:/Users/vpool/Documents/Winter2024/CSC587DataMining/datasets/DATA/Su_raw_matrix.txt")
+mean(su$Liver_2.CEL)
+sd(su$Liver_2.cel)
+colMeans(su)
+colSums(su)
+```
+
+question 2.
+```{r}
+a <- rnorm(1000, mean = 0, sd = 0.2)
+hist(a, main = "Histogram of a", xlim = c(-5,5)) 
+b <-rnorm(1000, mean = 0, sd = 0.5)
+hist(b, main = "Histogram of b", xlim = c(-5,5)) 
+```
+Histogram of a has have a narrower spread of data around the mean due to a smaller standard deviation 
+vs b will have a wider spread of data due to a larger standard deviation meaning more varability of data 
+
+Question 3.
+```{r}
+library (ggplot2)
+dat <- data.frame(cond = factor(rep(c("A","B"), each = 200)), rating = c (rnorm(200, mean =.8)))
+# OverLoad Histograms
+ggplot(dat,aes(x=rating, fill = cond)) + geom_histogram(binwidth = .5, alpha = .5, position = "identity")
+# Interleaved histogram
+ggplot(dat, aes(x=rating, colour = cond)) + geom_histogram(binwidth = .5, position = "dodge")
+#density plots 
+ggplot(dat, aes(x=rating, colour = cond )) + geom_density()
+# density plots with semitranspartent fill 
+ggplot(dat, aes(x=rating, fill = cond)) + geom_density(alpha = .3)
+
+
+diabetes <- read.csv("C:/Users/vpool/Documents/Winter2024/CSC587DataMining/datasets/DATA/diabetes_train.csv")
+# OverLoad Histograms
+ggplot(diabetes,aes(x=mass, fill = class)) + geom_histogram(binwidth = .5, alpha = .5, position = "identity")
+# Interleaved histogram
+ggplot(diabetes, aes(x=mass, colour = class)) + geom_histogram(binwidth = .5, position = "dodge")
+#density plots 
+ggplot(diabetes, aes(x=mass, colour = class )) + geom_density()
+# density plots with semitranspartent fill 
+ggplot(diabetes, aes(x=mass, fill = class)) + geom_density(alpha = .3)
+
+
+```
+questions 4 Read the titanic.csv file from DATA folder to a variable named passengers and perform the following steps and ex-
+plain the operation very briefly. Please make sure you have tidyverse installed on your system and you may specifically
+need to import the tidyr library. Otherwise, the chain of operations through ”piping” won’t work. (20 points):
+(a) passengers %>% drop_na() %>% summary()
+(b) passengers %>% filter(Sex == "male")
+
+```{r}
+library (tidyverse)
+passengers <- read.csv("C:/Users/vpool/Documents/Winter2024/CSC587DataMining/datasets/DATA/titanic.csv")
+passengers %>% drop_na() %>% summary()
+passengers %>% filter(Sex == "male")
+passengers %>% arrange(desc(Fare))
+passengers %>% mutate (Famsize = Parch + SibSp)
+passengers %>% group_by(Sex) %>% summarise(meanFare = mean(Fare), numSurv = sum(Survived)) 
+
+```
+Question 5 By using quantile(), calculate 10th, 30th, 50th, 60th percentiles of skin attribute of diabetes data. 
+```{r}
+quantile(diabetes$skin, probs = c(0.1, .3,.5,.6))
+
+
+```
