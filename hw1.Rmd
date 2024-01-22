@@ -2,9 +2,6 @@
 title: "HW 1"
 output:
   word_document: default
-  html_document:
-    df_print: paged
-  pdf_document: default
 ---
 
 
@@ -25,8 +22,7 @@ hist(a, main = "Histogram of a", xlim = c(-5,5))
 b <-rnorm(1000, mean = 0, sd = 0.5)
 hist(b, main = "Histogram of b", xlim = c(-5,5)) 
 ```
-Histogram of a has have a narrower spread of data around the mean due to a smaller standard deviation 
-vs b will have a wider spread of data due to a larger standard deviation meaning more varability of data 
+Histogram of a has have a narrower spread of data around the mean due to a smaller standard deviation vs b had a wider spread of data due to a larger standard deviation meaning more variability of data
 
 Question 3.
 ```{r}
@@ -54,11 +50,7 @@ ggplot(diabetes, aes(x=mass, fill = class)) + geom_density(alpha = .3)
 
 
 ```
-questions 4 Read the titanic.csv file from DATA folder to a variable named passengers and perform the following steps and ex-
-plain the operation very briefly. Please make sure you have tidyverse installed on your system and you may specifically
-need to import the tidyr library. Otherwise, the chain of operations through ”piping” won’t work. (20 points):
-(a) passengers %>% drop_na() %>% summary()
-(b) passengers %>% filter(Sex == "male")
+question 4 
 
 ```{r}
 library (tidyverse)
