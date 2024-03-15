@@ -1,0 +1,107 @@
+---
+title: "hw3 Maths"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+(13 - 29.963)^2 + (15 - 29.963)^2 + (16 - 29.963)^2 + 
+  (16 - 29.963)^2 + (19 - 29.963)^2 + (20 - 29.963)^2 + (20 - 29.963)^2 + 
+  (21 - 29.963)^2 + (22 - 29.963)^2 + (22 - 29.963)^2 + (25 - 29.963)^2 + 
+  (25 - 29.963)^2 + (25 - 29.963)^2 + (25 - 29.963)^2 + (30 - 29.963)^2 + 
+  (33 - 29.963)^2 + (33 - 29.963)^2 + (35 - 29.963)^2 + (35 - 29.963)^2 + 
+  (35 - 29.963)^2 + (35 - 29.963)^2 + (36 - 29.963)^2 + (40 - 29.963)^2 + 
+  (45 - 29.963)^2 + (46 - 29.963)^2 + (52 - 29.963)^2 + (70 - 29.963)^2
+
+4354.963 / 27
+
+30 + 5 + 3+10+4
+
+40+40+20+ 3+ 4+ 6
+52+113
+
+
+p1 <- 52/165
+p2 <- 113/165
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 30/110
+p2 <- 80/110
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 8/31
+p2 <- 23/31
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 10/14
+p2 <- 4/14
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 4/10
+p2 <- 6/10
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 0/20
+p2 <- 20/20
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 35/79
+p2 <- 44/79
+-(p1 * log2(p1) + p2 * log2(p2))
+
+p1 <- 40/63
+p2 <- 23/63
+-(p1 * log2(p1) + p2 * log2(p2))
+
+
+```
+```{r}
+parent  <- 0.8990308
+weight1 <- (110/165) * 0.8453509
+weight2 <- (31/165) * 0.8238116
+weight3 <- (14/165) * 0.8631206
+weight4 <- (10/165) * 0.9709506
+
+
+expected <- weight1 + weight2 + weight3 + weight4
+expected 
+parent - expected 
+
+```
+```{r}
+parent  <- 0.8990308
+weight1<- (20/165) * 0
+weight2<- (49/165) * 0
+weight3<- (79/165) *  0.9906175
+weight4 <-  (10 /165) * 0
+weight5 <- ( 3/165) * 0
+weight6 <-  ( 4/165) *0 
+
+expected <-weight1 + weight2 + weight3 + weight4 + weight5 + weight6
+expected 
+parent - expected 
+
+```
+```{r}
+parent  <- 0.8990308
+weight1<- (46/165) * 0
+weight2<- (40/165) * 0
+weight3<- (4/165) * 0
+weight4 <-  (4/165) * 0
+weight5 <- (63/165)  * 0.9468188
+weight6 <-  (8/165) * 0
+
+expected <-weight1 + weight2 + weight3 + weight4 + weight5 + weight6
+expected 
+parent - expected 
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
